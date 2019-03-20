@@ -1,6 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
 android {
     compileSdkVersion 28
 
@@ -50,4 +54,90 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+group = 'ae.bluecast.bookslibrary'
+version = '0.0.2'
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+
+            name 'BooksLibrary'
+            description ''
+            url 'https://github.com/josmilan/BooksLibrary'
+
+            licenses {
+                license {
+                    name 'MIT'
+                    url 'https://opensource.org/licenses/mit-license.php'
+                }
+            }
+            developers {
+                developer {
+                    id 'bluecast-developer'
+                    name 'Developer Bluecast'
+                    email 'developer@bluecast.ae'
+                }
+            }
+            scm {
+                connection 'https://github.com/josmilan/BooksLibrary.git'
+                developerConnection 'https://github.com/josmilan/BooksLibrary'
+                url 'https://github.com/josmilan/BooksLibrary'
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadoc(type: Javadoc) {
+    excludes = ['**/*.kt']
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = "bluecast-developer"
+    key = "28c45b20d47c5cedbb6802feac89671f7da99715"
+
+    configurations = ['archives']
+    pkg {
+        repo = 'BooksLibrary'
+        name = 'BooksLibrary'
+        desc = ''
+        version {
+            name = '0.0.2'
+            desc = ''
+            released  = new Date()
+            vcsTag = '0.0.2'
+        }
+        websiteUrl = 'https://github.com/josmilan/BooksLibrary'
+        vcsUrl = 'https://github.com/josmilan/BooksLibrary.git'
+        licenses = ["MIT"]
+//        dryRun = false
+        publish = true
+//        override = false
+//        publicDownloadNumbers = true
+//        version {
+//            desc = libraryDescription
+//        }
+    }
 }
