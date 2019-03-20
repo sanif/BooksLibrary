@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_bookShelf">BOOKSHELF</string>
+    <string name="txt_search_books"><![CDATA[Search Books, Author & Categories etc…]]></string>
+    <string name="txt_selectCategories">Select Categories</string>
+    <string name="txt_notifications">Notifications</string>
+    <string name="txt_search">Search</string>
+    <string name="txt_list_view">List View</string>
+    <string name="txt_grid_view">Grid View</string>
+    <string name="txt_about_this_book">About this book</string>
+    <string name="txt_myBooks">My books</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ae.bluecast.library.customLoader.ProgressLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/LL_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".LibraryActivity">
+    <include layout="@layout/toolbar_main"/>
+    <EditText
+            android:id="@+id/tvSearch"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:padding="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/txt_search_books"
+            android:textColor="@color/textGrey"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:gravity="center|start"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="5dp"
+            android:transitionName="@string/txt_search_books"
+            android:textSize="@dimen/text_size_medium"
+            android:editable="false"
+            android:background="@drawable/edittext_round_corner"/>
+
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/ivCircle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/black_circle"
+                android:layout_gravity="center"/>
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"/>
+    </FrameLayout>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/txt_selectCategories"
+              android:textColor="@color/black"
+              android:textSize="@dimen/text_size_normal"
+              android:gravity="center"
+              android:layout_marginBottom="10dp"/>
+    <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:id="@+id/vp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+</ae.bluecast.library.customLoader.ProgressLinearLayout>

@@ -1,0 +1,29 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ae.bluecast.library">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application>
+        <activity
+                android:name=".LibraryActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activities.SearchCategoriesActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activities.BooksOfCategoryActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activities.BookDetailActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Activities.FileReaderActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+</manifest>

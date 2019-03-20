@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#e3e3e3</color>
+    <color name="colorAccent">#e53935</color>
+    <color name="white">#FFF</color>
+    <color name="yellow">#ffc107</color>
+    <color name="orangeYellow">#FB9C2F</color>
+    <color name="blue">#3D526F</color>
+    <color name="black">#000</color>
+    <color name="borderGrey">#757575</color>
+    <color name="textGrey">#616161</color>
+    <color name="dividerColor">#e0e0e0</color>
+    <color name="transCol">#62801818</color>
+    <color name="transBlack">#64000000</color>
+    <color name="transparent">#00000000</color>
+
+</resources>
